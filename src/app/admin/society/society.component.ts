@@ -18,7 +18,7 @@ export class SocietyComponent implements OnInit {
   constructor(
     private _societyService: SocietyService,
     private _router: Router,
-    private _acRoute: ActivatedRoute
+    private _acRoute: ActivatedRoute 
   ) {
     // this._router.routeReuseStrategy.shouldReuseRoute = function () {
     //   return false;
