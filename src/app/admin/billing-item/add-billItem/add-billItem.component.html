@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <form [formGroup]="billForm" (ngSubmit)="createBill()" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="itemCode">Item Code :</label>
+            <input type="text" class="form-control" id="itemCode" name="itemCode" formControlName="itemCode">
+            <div
+              *ngIf="billForm.controls['itemCode'].invalid && (billForm.controls['itemCode'].dirty || billForm.controls['itemCode'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="billForm.controls['itemCode'].errors.required">
+                Code is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="itemName">Item Name :</label>
+            <input type="text" class="form-control" id="itemName" name="itemName" formControlName="itemName">
+            <div
+              *ngIf="billForm.controls['itemName'].invalid && (billForm.controls['itemName'].dirty || billForm.controls['itemName'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="billForm.controls['itemName'].errors.required">
+                Name is required.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="itemUnit">Item Unit </label>
+            <input type="number" class="form-control" id="itemUnit" name="itemUnit" formControlName="itemUnit">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="itemStatus">Item Status </label>
+            <input list="itemStatus" value="" class="col-md-12 custom-select custom-select-md" formControlName="itemStatus">
+            <datalist id="itemStatus">
+                <option value="Active">Active</option>
+                <option value="Closed">Closed</option>
+            </datalist>
+            <!-- <div
+            *ngIf="billForm.controls['itemStatus'].invalid && (billForm.controls['itemStatus'].dirty || billForm.controls['itemStatus'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="billForm.controls['itemStatus'].errors.required">
+              Total Flats are required.
+            </div>
+          </div> -->
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" [disabled]="billForm.invalid">Save</button> &nbsp;&nbsp;
+      </form>
+    </div>
+  </div>
+</div>

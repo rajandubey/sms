@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <form [formGroup]="flatForm" (ngSubmit)="createFlat()" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="FlatNumber">Flat Number :</label>
+            <input type="text" class="form-control" id="FlatNumber" name="FlatNumber" formControlName="FlatNumber">
+            <div
+              *ngIf="flatForm.controls['FlatNumber'].invalid && (flatForm.controls['FlatNumber'].dirty || flatForm.controls['FlatNumber'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="flatForm.controls['FlatNumber'].errors.required">
+                Number is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="FlatArea">Total Flat Area :</label>
+            <input type="number" class="form-control" id="FlatArea" name="FlatArea" formControlName="FlatArea">
+            <!-- <div
+              *ngIf="flatForm.controls['FlatArea'].invalid && (flatForm.controls['FlatArea'].dirty || flatForm.controls['FlatArea'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="flatForm.controls['FlatArea'].errors.required">
+                Area is required.
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="BuildingNumber">Building Number :</label> 
+              <input list="BuildingNumber" value="" class="col-md-12 custom-select custom-select-md" formControlName="BuildingName">
+              <datalist id="BuildingNumber">
+                  <option *ngFor="let item of buildingNames"  value="{{item.BuildingName}}">{{item.BuildingName}}</option>
+              </datalist>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="FlatType">Flat Type :</label>
+            <input list="flattype" value="" class="col-md-12 custom-select custom-select-md" formControlName="FlatType">
+            <datalist id="flattype">
+                <option value="1 RK">1 RK</option>
+                <option value="1 BHK">1 BHK</option>
+                <option value="2 BHK">2 BHK</option>
+            </datalist>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="RateOfMaintainance">Rate Of Maintainance :</label>
+            <input type="number" class="form-control" id="RateOfMaintainance" name="RateOfMaintainance"
+              formControlName="RateOfMaintainance">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="FixedMaintainance">Add Fixed Maintainance :</label>
+            <input type="number" class="form-control" id="FixedMaintainance" name="FixedMaintainance"
+              formControlName="FixedMaintainance">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="CalcOn">Calc On:</label>
+            <!-- <input type="number" class="form-control" id="CalcOn" name="CalcOn" formControlName="CalcOn"> -->
+            <input list="CalcOn" value="" class="col-md-12 custom-select custom-select-md" formControlName="CalcOn">
+            <datalist id="CalcOn">
+                <option value="Rate">Rate</option>
+                <option value="Fixed">Fixed</option>
+            </datalist>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="flatForm.invalid">Save</button> &nbsp;&nbsp;
+      </form>
+    </div>
+  </div>
+</div>

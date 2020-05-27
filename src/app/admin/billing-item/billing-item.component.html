@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 text-center" >
+      <h2> <u>Billing Master</u></h2>      
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container-fluid">
+  <div class="row">
+      <!-- <div class="col-md-4">
+        <input class="form-control" type="text" placeholder="Search Building Here">
+      </div> -->
+      <div class="col-md-4">
+        <button class="btn btn-primary btn-md" type="submit" (click)="addBillItem()">Add </button>
+      </div>
+  </div>
+</div> <hr>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Bill Name</th>
+            <th scope="col">Bill Code</th>
+            <th scope="col">
+              <button type="submit" class=" btn  btn-info btn-sm btn-block" (click)="listAllBills()">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of allBuildings ; let i = index;">
+          <tr>
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.itemName}}</td>
+            <td>{{item.itemCode}}</td>
+            <td>
+              <button class="btn btn-warning btn-sm" type="warning" (click)="gotoModifyBill(item.idbillingitem)">Edit </button> &nbsp;
+              <button class="btn btn-danger btn-sm" type="submit" (click)="deleteBill(item.idbillingitem)">Delete </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

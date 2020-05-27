@@ -1,0 +1,46 @@
+<form [formGroup]="customerForm" (ngSubmit)="createCustomer()" nonvalidate>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="CustomerName">Customer Name</label>
+        <input type="text" class="form-control" id="CustomerName" name="CustomerName" formControlName="CustomerName">
+        <div
+        *ngIf="customerForm.controls['CustomerName'].invalid && (customerForm.controls['CustomerName'].dirty || customerForm.controls['CustomerName'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="customerForm.controls['CustomerName'].errors.required">
+          Name is required.
+        </div>
+      </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="CustomerType">Customer Type</label>
+        <input type="text" class="form-control" id="CustomerType" name="CustomerType" formControlName="CustomerType">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="CustomerAddress">Address</label>
+      <input type="text" class="form-control" id="CustomerAddress" name="CustomerAddress" formControlName="CustomerAddress">
+    </div>
+    <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="CustomerEmail">Mail</label>
+      <input type="email" class="form-control" id="CustomerEmail" name="CustomerEmail" formControlName="CustomerEmail">
+    </div>
+    <div class="form-group col-md-6">
+        <label for="CustomerGST">GST</label>
+        <input type="text" class="form-control" id="CustomerGST" name="CustomerGST" formControlName="CustomerGST">
+      </div>
+</div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="CustomerContact">Contact</label>
+        <input type="number" class="form-control" id="CustomerContact" name="CustomerContact" formControlName="CustomerContact">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="CustomerPAN">PAN Number</label>
+        <input type="text" class="form-control" id="CustomerPAN" name="CustomerPAN" formControlName="CustomerPAN">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">Save</button> &nbsp;
+    <button type="reset" class="btn btn-danger" (click)="cancelSave()" >Cancel</button>
+  </form>
+  

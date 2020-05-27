@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="finYearForm" (ngSubmit)="createFinYear()">
+          <div class="form-group">
+            <label for="yearcode">Year Code</label>
+            <input type="text" class="form-control" id="yearcode" aria-describedby="yearcode" formControlName="yearCode">
+            <div
+            *ngIf="finYearForm.controls['yearCode'].invalid && (finYearForm.controls['yearCode'].dirty || finYearForm.controls['yearCode'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="finYearForm.controls['yearCode'].errors.required">
+              Year Code is required.
+            </div>
+          </div>
+          </div>
+          <div class="form-group">
+            <label for="fromdate">From Date : </label>
+            <input type="date" class="form-control" id="fromdate" aria-describedby="fromdate" formControlName="fromDate">
+            <!-- <div
+            *ngIf="finYearForm.controls['fromDate'].invalid && (finYearForm.controls['fromDate'].dirty || finYearForm.controls['fromDate'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="finYearForm.controls['fromDate'].errors.required">
+              From Date is required.
+            </div>
+          </div> -->
+          </div>
+          <div class="form-group">
+            <label for="todate">To Date : </label>
+            <input type="date" class="form-control" id="todate" aria-describedby="todate" formControlName="toDate">
+            <!-- <div
+            *ngIf="finYearForm.controls['toDate'].invalid && (finYearForm.controls['toDate'].dirty || finYearForm.controls['toDate'].touched)"
+            class="alert alert-danger">
+            <div *ngIf="finYearForm.controls['toDate'].errors.required">
+              To Date is required.
+            </div>
+          </div> -->
+          </div>
+          <button type="submit" class="btn btn-primary " [disabled]="finYearForm.invalid">Save</button>
+        </form>
+    </div>
+  </div>
+</div>

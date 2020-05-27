@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngIf="customerInfo">
+      <form nonvalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="CustomerName">Customer Name</label>
+            <input type="text" class="form-control" id="CustomerName" name="CustomerName"
+              [(ngModel)]="customerInfo.CustomerName">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="CustomerType">Customer Type</label>
+            <input type="text" class="form-control" id="CustomerType" name="CustomerType"
+              [(ngModel)]="customerInfo.CustomerType">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="CustomerAddress">Address</label>
+          <input type="text" class="form-control" id="CustomerAddress" name="CustomerAddress"
+            [(ngModel)]="customerInfo.CustomerAddress">
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="CustomerEmail">Mail</label>
+          <input type="email" class="form-control" id="CustomerEmail" name="CustomerEmail"
+            [(ngModel)]="customerInfo.CustomerEmail">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="CustomerEmail">GST</label>
+          <input type="text" class="form-control" id="CustomerEmail" name="CustomerGST"
+            [(ngModel)]="customerInfo.CustomerGST">
+        </div>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="CustomerContact">Contact</label>
+            <input type="number" class="form-control" id="CustomerContact" name="CustomerContact"
+              [(ngModel)]="customerInfo.CustomerContact">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="CustomerPAN">PAN Number</label>
+            <input type="text" class="form-control" id="CustomerPAN" name="CustomerPAN"
+              [(ngModel)]="customerInfo.CustomerPAN">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Update</button> &nbsp;
+        <button type="reset" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
+      </form>
+
+    </div>
+  </div>
+</div>

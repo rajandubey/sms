@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <form [formGroup]="userForm" (ngSubmit)="createUser()" novalidate>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="UserName">User Name :</label>
+            <input type="text" class="form-control" id="UserName" name="UserName" formControlName="UserName">
+            <div
+              *ngIf="userForm.controls['UserName'].invalid && (userForm.controls['UserName'].dirty || userForm.controls['UserName'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="userForm.controls['UserName'].errors.required">
+                Name is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="Password">Password :</label>
+            <input type="Password" class="form-control" id="Password" name="Password" formControlName="Password">
+            <div
+              *ngIf="userForm.controls['Password'].invalid && (userForm.controls['Password'].dirty || userForm.controls['Password'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="userForm.controls['Password'].errors.required">
+                Password is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="TypeOfUser">User Type :</label>
+            <input list="TypeOfUser" value="" class="col-md-12 custom-select custom-select-md"
+              formControlName="TypeOfUser">
+            <datalist id="TypeOfUser">
+              <option value="Normal">Normal</option>
+              <option value="Admin">Admin</option>
+            </datalist>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save</button> &nbsp;&nbsp;
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6" *ngIf="buildingInfo">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="BuildingName">Building Name :</label>
+            <input type="text" class="form-control" name="BuildingName" id="BuildingName" [(ngModel)]="buildingInfo.BuildingName" required>
+            
+          </div>
+          <div class="form-group col-md-12">
+            <label for="NoOfFloor">Total Floors :</label>
+            <input type="number" class="form-control" name="NoOfFloor" id="NoOfFloor" [(ngModel)]="buildingInfo.NoOfFloor" required>
+          </div>
+          <div class="form-group col-md-12">
+            <label for="NoOfFlats">Total Flats :</label>
+            <input type="number" class="form-control"  name="NoOfFlats" id="NoOfFlats" [(ngModel)]="buildingInfo.NoOfFlats" required>
+          </div>
+        </div>       
+        <button type="submit" class="btn btn-primary" (click)="updateBuildingDetail()">Save</button> &nbsp;&nbsp;
+      </form>      
+    </div>
+  </div>
+</div> 

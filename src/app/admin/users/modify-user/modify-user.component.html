@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8" *ngIf="userInfo">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="UserName">UserName :</label>
+            <input type="text" class="form-control" id="UserName" name="UserName" [(ngModel)]="userInfo.UserName"
+              required>
+            <!-- <div
+              *ngIf="flatForm.controls['FlatNumber'].invalid && (flatForm.controls['FlatNumber'].dirty || flatForm.controls['FlatNumber'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="flatForm.controls['FlatNumber'].errors.required">
+                Number is required.
+              </div>
+            </div> -->
+          </div>
+          <div class="form-group col-md-12">
+            <label for="Password">Password :</label>
+            <input type="password" class="form-control" id="Password" name="Password" [(ngModel)]="userInfo.Password">
+            <!-- <div
+              *ngIf="flatForm.controls['FlatArea'].invalid && (flatForm.controls['FlatArea'].dirty || flatForm.controls['FlatArea'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="flatForm.controls['FlatArea'].errors.required">
+                Area is required.
+              </div>
+            </div> -->
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="TypeOfUser">User Type :</label>
+            <input list="TypeOfUser" value="{{userInfo.TypeOfUser}}" class="col-md-12 custom-select custom-select-md" name="TypeOfUser"
+              [(ngModel)]="userInfo.TypeOfUser">
+            <datalist id="TypeOfUser">
+              <option value="Normal">Normal</option>
+              <option value="Admin">Admin</option>
+            </datalist>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)=" updateUserDetail()">Save</button> &nbsp;&nbsp;
+      </form>
+    </div>
+  </div>
+</div>

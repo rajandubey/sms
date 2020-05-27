@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <div class="row blank">
+    <div class="col-md-1 text-center">
+      <h2>Welcome {{username}}</h2>
+    </div>
+    <div class="col-md-10 text-center ">
+      <p>Dashboard</p>      
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-primary btn-lg" (click)="logout()">Logout</button>
+    </div>    
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <button class="btn master" [routerLink]="['/admin',{username:this.username}]" routerLinkActive="router-link-active">   
+      <div class="box-part text-center" (click)="gotoMaster()">
+        <i class="fa fa-user-circle-o fa-4x" aria-hidden="true"></i>
+        <div class="title">
+          <h4>Masters</h4>
+        </div>
+        <div class="text">
+          <span>
+            <p>Add , Modify , Delete Users, Buildings, Flats, Customers, Vendors</p>
+          </span>
+        </div>
+      </div>
+    </button>
+    </div>
+    <div class="col-md-4 transaction">
+      <div class="box-part text-center">
+        <i class="fa fa-exchange fa-4x" aria-hidden="true"></i>
+        <div class="title">
+          <h4>Transactions</h4>
+        </div>
+        <div class="text">
+          <span>
+            <p>Add , Modify , Delete Users, Buildings, Flats, Customers, Vendors</p>          
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 report">
+      <div class="box-part text-center">
+        <i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
+        <div class="title">
+          <h4>Reports</h4>
+        </div>
+        <div class="text">
+          <span>
+            <p>Add , Modify , Delete Users, Buildings, Flats, Customers, Vendors</p>           
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

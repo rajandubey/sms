@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row" *ngIf="vendorInfo">
+    <div class="col-md-12">
+      <form nonvalidate>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VendorName">Vendor Name</label>
+            <input type="text" class="form-control" id="VendorName" name="VendorName" [(ngModel)]="vendorInfo.VendorName">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="VendorType">Vendor Type</label>
+            <input type="text" class="form-control" id="VendorType" name="VendorType" [(ngModel)]="vendorInfo.VendorType">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="VendorAddress">Address</label>
+          <input type="text" class="form-control" id="VendorAddress" name="VendorAddress" [(ngModel)]="vendorInfo.VendorAddress">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VendorCity">City</label>
+            <input type="text" class="form-control" id="VendorCity" name="VendorCity" [(ngModel)]="vendorInfo.VendorCity">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="VendorState">State</label>
+            <input type="text" class="form-control" id="VendorState" name="VendorState" [(ngModel)]="vendorInfo.VendorState">
+          </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="VendorEmail">Mail</label>
+          <input type="email" class="form-control" id="VendorEmail" name="VendorEmail" [(ngModel)]="vendorInfo.VendorEmail">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="VendorGST">GST</label>
+          <input type="text" class="form-control" id="VendorGST" name="VendorGST" [(ngModel)]="vendorInfo.VendorGST">
+        </div>
+      </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="VendorContact">Contact</label>
+            <input type="number" class="form-control" id="VendorContact" name="VendorContact" [(ngModel)]="vendorInfo.VendorContact">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="VendorPAN">PAN Number</label>
+            <input type="text" class="form-control" id="VendorPAN" name="VendorPAN" [(ngModel)]="vendorInfo.VendorPAN">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="updateVendor()">Update</button> &nbsp;
+        <button type="submit" class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+

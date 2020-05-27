@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-1 text-center society-title">
+      <!-- <h1>Welcome To SMS</h1> -->
+      <h5>Welcome {{username}}</h5>
+     
+    </div>
+    <div class="col-md-8 text-center society-title" *ngFor="let item of societyInfo">
+      <!-- <h1>Welcome To SMS</h1> -->
+      <h2>{{item.SocietyName}}</h2>
+    </div>
+    
+    <div class="col-md-3 text-center society-title">
+      <!-- <h1>Welcome To SMS</h1> -->
+      <button class="btn btn-info btn-md" (click)="dashboard()">Dashboard
+        <i class="fa fa-dashcube" aria-hidden="true"></i>
+      </button>
+      &nbsp;
+      <button class="btn btn-primary btn-md" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-sm-2 col-xs-12 master-list">
+      <div class="master" style="font-size: 20px;color: blanchedalmond;">
+        <div class="card-body " >
+          <i class="fa fa-bars" aria-hidden="true"></i> &nbsp; Masters
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoSocietyMaster()">
+          <i class="fa fa-home" aria-hidden="true"></i> &nbsp; Society
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoBuildingMaster()">
+          <i class="fa fa-building" aria-hidden="true"></i>&nbsp; Building
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoFlatMaster()">
+          <i class="fa fa-h-square" aria-hidden="true"></i>&nbsp; Flat
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoUsersMaster()">
+          <i class="fa fa-user" aria-hidden="true"></i> &nbsp;User
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoFYMaster()">
+          <i class="fa fa-calendar" aria-hidden="true"></i> &nbsp; Financial Year
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoVendorMaster()">
+          <i class="fa fa-credit-card" aria-hidden="true"></i>
+          &nbsp; Vendor
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoCustomerMaster()">
+          <i class="fa fa-handshake-o" aria-hidden="true"></i>
+          &nbsp; Customer
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoBillItem()">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          &nbsp; Bill Item
+        </div>
+      </div>
+
+      <!-- Master Ends Here -->
+      <!-- <div class="" style="font-size: 20px;color: blanchedalmond;">
+        <div class="card-body">
+          <i class="fa fa-bars" aria-hidden="true"></i> &nbsp;Transaction 
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoFYMaster()">
+          Transaction One
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body" (click)="gotoFYMaster()">
+          Transaction Year 
+        </div>
+      </div> -->
+    </div>
+    <div class="col-md-10 col-lg-10 col-sm-10 col-xs-12 master-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

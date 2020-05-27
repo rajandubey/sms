@@ -1,0 +1,45 @@
+.society-title{
+    border-bottom: 1px solid gray;
+    background-color: #212121;
+    color: turquoise;
+    padding: 1% 0%;
+}
+.master-list,.master-content{
+    height: 643px;
+    padding: 0% 0%;    
+}
+
+.master-list{
+    border-right: 2px solid gray;
+    background-color: #212121;
+}
+.master-list .card:hover{
+    border: 0px solid grey;
+    color: white;
+    font-weight: bold;
+}
+
+/* .master:hover ~ .card{
+    display: block;
+    transition: all 0.5s ease;
+
+} */
+.card{
+    /* width: 90%; */
+    /* border:2px solid red; */
+    /* padding: 2% 2%; */
+    /* margin-top: 2px; */
+    /* background-color: #00796B; */
+    background-color: #1976D2;
+    font-size: 15px;
+    color: white;
+    height: 50px;
+    line-height: 0px;
+    border-radius: 0%;
+    /* display: none; */
+    transition: all .5s ease;
+}
+
+.hightlight{
+    color: black;
+}
